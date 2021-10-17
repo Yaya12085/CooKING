@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/style.css">
+	<title>CooKING</title>
+</head>
+
+<body>
+	<nav>
+
+		<ul>CooKING</ul>
+		<ul class="profil">
+			<li>Welcome YayaDev !</li>
+			<span> <img src="./assets/images/yaya.jpg" alt="profilpic"></span>
+		</ul>
+
+		<ul class="nav-links">
+			<li class="active">Home</li>
+			<li class="subnav-reveal">
+				<span>Menu</span>
+				<ul class="subnav">
+					<li>Grilled Shrimp</li>
+					<li>Chicken Wings</li>
+					<li>Caesar Salad</li>
+					<li>Fish Sandwich</li>
+					<li>Meatball Sandwich</li>
+					<li>Hot Pretzel Sticks</li>
+					<li>Angus Hamburger</li>
+					<li>see more &#8594;</li>
+				</ul>
+			</li>
+			<li>Order <span class="order">3</span></li>
+			<label for="">
+				<label for="search-field" class="search-input">
+					<input type="text" placeholder="Search in menu..." class="text-field" id="search-field">
+					<input type="button" value="Search" class="search-btn">
+				</label>
+				<label for="dark" class="dark-mode"> <img src="./assets/icons/moon.png" alt="dark-mode"
+						class="switch"></label>
+				<input type="checkbox" id="dark" style="display: none;" checked>
+			</label>
+
+
+		</ul>
+		<div class="humberger">
+			<span class="bar-1"></span>
+			<span class="bar-2"></span>
+			<span class="bar-3"></span>
+		</div>
+	</nav>
+	<div class="back">
+		<div></div>
+		<div></div>
+	</div>
+	<div class="container">
+		<div class="first">
+			<h1>Yes <span class="logo">CooKING</span>, amazing</h1>
+			<h3>Lorem ipsum dolor sit amet consectetur.</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, tempora, nisi iusto voluptatem debitis
+				aliquid quas culpa nostrum ullam, suscipit porro quidem. Illum necessitatibus consequuntur hic aliquid
+				magnam quam earum.</p>
+			<input type="button" value="Order Now" class="order-btn">
+			<input type="button" value="Contact-us" class="order-btn">
+		</div>
+		<div class="second">
+			<div class="preview">
+				<img src="./assets/images/1.png" alt="preview">
+			</div>
+		</div>
+		<div class="third">
+			<div class="image">
+				<img src="./assets/images/2.png" alt="food" onclick="theme('#ECB901'); previewFunction(this)">
+			</div>
+			<div class="image">
+				<img src="./assets/images/3.png" alt="food" onclick="theme('#FF6416');  previewFunction(this)">
+			</div>
+
+			<div class="image">
+				<img src="./assets/images/4.png" alt="food" onclick="theme('#ED8508');  previewFunction(this)">
+			</div>
+		</div>
+		<ul class="footer">
+			<li>#Salad</li>
+			<li>#Steak</li>
+			<li>#Spaghetti</li>
+			<li>#French_fries</li>
+			<li>&#8594;</li>
+		</ul>
+
+	</div>
+
+	<script src="./assets/script.js"></script>
+</body>
+
+</html>

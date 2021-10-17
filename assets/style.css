@@ -1,0 +1,497 @@
+@import url('https://fonts.cdnfonts.com/css/bradley-hand-2');
+@import url('https://fonts.cdnfonts.com/css/gill-sans-mt');
+
+:root{
+  --color-1: #D91B01;
+  --color-2: #170184;
+  --color-3: #2FFDF9;
+  --f-color: #EB2A2E;
+  --s-color: bisque;
+  --white: #fff;
+  --black: #000;
+}
+
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+/*Hide scroll indicator*/
+::-webkit-scrollbar {
+  width: 0;
+}
+body { 
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+body::-webkit-scrollbar-track {
+  background-color: none;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-1);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+
+/* NAV */
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--white);
+  z-index: 99;
+  font-family: "Bradley Hand", sans-serif;
+   box-shadow: 0 1px 20px rgba(0, 0, 0, .05);
+
+
+}
+.humberger{
+  display:none;
+}
+
+nav ul:first-child{
+  height: 70px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: 600;
+  color: var(--color-1);
+  font-size: large;
+}
+nav ul:first-child img{
+  width: 300%;
+  margin-left: 30px;
+}
+.profil{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: max-content;
+list-style: none;
+padding: 0;
+}
+.profil span{
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: var(--color-1);
+  border-radius: 50%;
+  position: relative;
+}
+.profil span img{
+  width: 100%;
+  border-radius: 50%;
+}
+.profil li{
+  margin-right: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+  color: var(--black);
+
+}
+nav .nav-links{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  position: relative;
+}
+nav .nav-links li{
+  margin-right: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  cursor: pointer;
+  font-size: large;
+  min-height: 40px;
+  font-weight: 600;
+  color: var(--black);
+transition: width .4s;
+
+}
+.active{
+border-bottom: 2px solid var(--color-1);
+}
+.dark-mode {
+  width: 30px;
+  height: 30px;
+  background-color: var(--black);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dark-mode img{
+  width: 140%;
+  filter: invert(1);
+}
+
+
+.nav-links label{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.nav-links label input{
+  margin-right: 10px;
+  outline: 0;
+  border: 0;
+}
+.nav-links .search-input{
+  padding: 6px 10px;
+  border-radius: 5px;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+   border: 1px solid var(--color-1);
+   margin-right: 20px;
+}
+.nav-links .search-input .text-field{
+   padding: 6px 0;
+   background-color: transparent;
+}
+.nav-links .search-input::placeholder{
+  font-weight: 600;
+}
+
+.nav-links .search-btn{
+  background-color: var(--color-1);
+  padding: 6px 10px;
+  color: var(--white);
+  border-radius: 5px;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  margin: 0;
+  border: 0;
+}
+.order-btn{
+  background-color: var(--color-1);
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  margin: 0;
+  border: 0;
+}
+.order-btn:last-child{
+  margin-left: 20px;
+}
+.order{
+background-color: var(--color-1);
+color: var(--white);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 0;
+  right: -50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 900px){
+.profil{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.profil li{
+  display: none;
+}
+}
+
+@media screen and (max-width: 660px) {
+  .humberger{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+height: 40px;
+width: 50px;
+right: 20px;
+cursor: pointer;
+}
+.humberger span{
+height: 4px;
+width: 100%;
+background-color:  var(--color-1);
+border-radius: 50px;
+transition: .4s;
+
+}
+
+.humberger.isClick .bar-1{
+transform: rotate(45deg) translate(10px, 0px);
+transition: .4s;
+
+}
+.humberger.isClick  .bar-2{
+display: none;
+transition: .4s;
+
+}
+.humberger.isClick  .bar-3{
+transform: rotate(-45deg) translate(14px, -4px);
+transition: .4s;
+
+}
+
+  nav .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px);
+    top: 40px;
+    right: -100%;
+    transition: 0.5s all;
+  }
+  nav .nav-links.open {
+    background-color: var(--white);
+    right: -20%;
+    height: 100vh;
+  }
+  nav .nav-links li {
+    padding: 10px 0;
+    margin-top: 20px;
+    width: max-content;
+    
+  }
+  .order-btn{
+    margin-bottom: 30px;
+  }
+  
+}
+@media screen and (max-width: 480px) {
+  nav .nav-links.open {
+    right: 0%;
+  }
+}
+
+/* NAV */
+
+
+/* SUBNAV */
+.subnav-reveal:hover .subnav{
+display: flex;
+}
+.subnav:hover{
+  display: flex;
+}
+.subnav{
+  position: absolute;
+  background-color: var(--white);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: max-content;
+  padding: 10px;
+  height: max-content;
+  top: 40px;
+  left: -50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .05);
+}
+.subnav li{
+  margin: 3px 4px;
+  width: 90%;
+}
+.subnav li:hover{
+  border-bottom: 1px solid var(--color-1);
+}
+@media screen and (max-width: 660px) {
+  .subnav{
+    position: relative;
+    top: 0px;
+    padding: 0;
+box-shadow: none;
+  }
+}
+/* SUBNAV */
+
+
+
+
+/* CONTAINER */
+.back{
+   background-color: var(--white);
+  height: 100vh;
+  width: 100%;
+position: absolute;
+inset: 0;
+overflow: hidden;
+}
+.back div{
+  height: 400px;
+  width: 400px;
+  border: 2px solid var(--color-1);
+  border-radius: 50%;
+}
+.back div:last-child{
+  position: absolute;
+  right: -10%;
+  bottom: -10%;
+}
+.back div:first-child{
+  position: absolute;
+  left: -20%;
+  top: 0;
+}
+.container {
+  background-color: transparent;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: var(--black);
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+
+}
+
+.first{
+  flex: .50;
+}
+.second{
+  flex: .60;
+}
+.third{
+   flex: .1;
+}
+.container .first h1{
+  font-weight: bolder;
+  font-size: 50px;
+  color: var(--color-1);
+
+}
+.logo{
+    font-family: "Bradley Hand", sans-serif;
+}
+
+.container .second{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+}
+.container .second .preview img{
+  width: 100%;
+  transition: .4s;
+}
+.container .third{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+
+.container .third .image{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+  border: 1px solid white;
+}
+.container .third .image.selected{
+  border-top: 2px solid var(--color-1);
+  border-left: 2px solid var(--color-1);
+}
+.container .third .image img{
+  width: 100%;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: .4s;
+
+}
+.container .third .image:hover img{
+  width: 200%;
+  transition: .4s;
+}
+@media screen and (max-width: 660px) {
+  .container {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+
+  .container .third{
+    flex-direction: row;
+    align-items: center;
+  flex: .1;
+  margin-bottom: 80px;
+
+  }
+  .container .third .image{
+     margin: 0 10px;
+  }
+.back div{
+  display: none;
+}
+}
+
+
+/* CONTAINER */
+
+
+
+/* FOOTER */
+.footer{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: max-content;
+list-style: none;
+position: absolute;
+bottom: 0;
+padding: 0;
+}
+.footer li{
+  margin: 0 4px ;
+  padding: 6px 8px;
+  cursor: pointer;
+  background-color: var(--color-1);
+  color: white;
+  border-radius: 4px;
+}
+.footer li:last-child{
+  padding: 6px;
+}
+
+
+
+/* FOOTER */
